@@ -1,0 +1,14 @@
+en:
+  defaults:
+    btn_index: Back to books
+    btn_show: Show this book
+    btn_new: New book
+    btn_edit: Edit this book
+    btn_delete: Destroy this book
+  books:
+    index:
+      title: Books
+    new:
+      title: New book
+    edit:
+      title: Editing book
