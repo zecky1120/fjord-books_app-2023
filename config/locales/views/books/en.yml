@@ -6,6 +6,9 @@ en:
     btn_edit: Edit this book
     btn_delete: Destroy this book
   books:
+    create: Book was successfully created.
+    update: Book was successfully updated.
+    delete: Book was successfully destroyed.
     index:
       title: Books
     new:
