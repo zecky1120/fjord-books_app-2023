@@ -31,3 +31,8 @@
 
 en:
   hello: "Hello world"
+  controllers:
+    default:
+      create: "%{item} was successfully created."
+      update: "%{item} was successfully updated."
+      destroy: "%{item} was successfully destroyed."
