@@ -1,22 +1,24 @@
 en:
-  defaults:
-    btn_index: Back to books
-    btn_show: Show this book
-    btn_new: New book
-    btn_edit: Edit this book
-    btn_delete: Destroy this book
   books:
-    create: Book was successfully created.
-    update: Book was successfully updated.
-    delete: Book was successfully destroyed.
     index:
-      title: Books
+      top: Books
+      new: New book
+      show: Show book
     new:
       title: New book
+      back: Back to index
+    form:
+      submit: submit
     edit:
       title: Editing book
+      show: Show book
+      back: Back to index
     book:
       title: title
       memo: memo
       author: author
       picture: picture
+    show:
+      edit: Edit book
+      back: Back to index
+      delete: Delete book
