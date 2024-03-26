@@ -1,0 +1,22 @@
+ja:
+  books:
+    index:
+      title: "%{item}の一覧"
+      new: "%{item}を新規作成する"
+      show: 詳細を見る
+    new:
+      title: 新規作成
+      back: 一覧に戻る
+    edit:
+      title: 編集ページ
+      show: 詳細に戻る
+      back: 一覧に戻る
+    book:
+      title: タイトル
+      memo: 内容
+      author: 著者
+      picture: 表紙
+    show:
+      edit: 編集する
+      back: 一覧に戻る
+      delete: 削除する
