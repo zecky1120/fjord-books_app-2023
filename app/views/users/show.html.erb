@@ -1,0 +1,10 @@
+<h1><%= t('.title') %></h1>
+<p><%= t('.email') %>: <%= current_user.email %></p>
+<p><%= t('.zipcode') %>: <%= @user.zipcode %></p>
+<p><%= t('.address') %>: <%= current_user.address %></p>
+<p><%= t('.profile') %>: <%= current_user.profile %></p>
+
+<% if @user == current_user %>
+  <%= link_to t('.edit'), edit_user_registration_path %>
+  <%= link_to t('.delete'), user_registration_path, data: { confirm: 'are you sure?' }, method: :delete %>
+<% end %>
