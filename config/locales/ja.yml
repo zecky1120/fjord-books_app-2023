@@ -205,7 +205,17 @@ ja:
       notice_create: "%{name}が作成されました。"
       notice_update: "%{name}が更新されました。"
       notice_destroy: "%{name}が削除されました。"
+  signed_out: ログアウト
   users:
+    index:
+      title: ユーザー一覧
+      email: メールアドレス
+      zipcode: 郵便番号
+      address: 住所
+      profile: 自己紹介文
+      show: 詳細を見る
+      edit: 編集する
+      delete: 削除する
     show:
       title: ユーザー情報
       email: メールアドレス
