@@ -41,7 +41,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def show
     @user = User.find_by(id: params[:id])
   end
- 
+
   protected
 
   # If you have extra params to permit, append them to the sanitizer.
@@ -55,7 +55,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # The path used after sign up.
-  def after_sign_up_path_for(resource)
+  def after_sign_up_path_for(_)
     "/users/#{current_user.id}"
     # super(resource)
   end
