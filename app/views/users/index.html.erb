@@ -1,0 +1,33 @@
+<h1><%= t('.title') %></h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col"><%= t('.email') %></th>
+      <th scope="col"><%= t('.zipcode') %></th>
+      <th scope="col"><%= t('.address') %></th>
+      <th scope="col"><%= t('.profile') %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+    <tr>
+      <td><%= user.id %></td>
+      <td><%= user.email %></td>
+      <td><%= user.zipcode %></td>
+      <td><%= user.address %></td>
+      <td><%= user.profile %></td>
+      <td><%= link_to t('.show'), user_path(user) %></td>
+      <% if user == current_user %>
+        <td><%= link_to t('.edit'), edit_user_registration_path(user) %></td>
+        <% else %>
+        <td></td>
+      <% end %>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @users %>
