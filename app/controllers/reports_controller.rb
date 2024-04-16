@@ -36,6 +36,15 @@ class ReportsController < ApplicationController
     end
   end
 
+  def destroy
+    @report = Report.find(params[:id])
+    if @report.destroy
+      redirect_to reports_path
+    else
+      render :show
+    end
+  end
+
   private
 
   def report_params
