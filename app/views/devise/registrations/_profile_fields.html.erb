@@ -18,11 +18,11 @@
   <%= f.text_area :self_introduction %>
 </div>
 
-<div class="field">
-  <% if @user.avatar.attached? %>
+<% if @user.avatar.attached? %>
+  <div class="field">
     <strong>現在のユーザーアイコン</strong><%= image_tag @user.avatar.variant(resize_to_limit: [150, 150], format: :jpg) %>
-  <% end %>
-</div>
+  </div>
+<% end %>
 
 <div class="field">
   <%= f.label :avatar %>
