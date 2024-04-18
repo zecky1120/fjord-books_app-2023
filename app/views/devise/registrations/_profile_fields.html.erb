@@ -20,7 +20,7 @@
 
 <% if @user.avatar.attached? %>
   <div class="field">
-    <strong><%= User.human_attribute_name(:current_user_icon) %></strong><%= image_tag @user.avatar.variant(resize_to_limit: [150, 150]) %>
+    <strong><%= t('.current_user_icon') %></strong><%= image_tag @user.avatar.variant(resize_to_limit: [150, 150]) %>
   </div>
 <% end %>
 
