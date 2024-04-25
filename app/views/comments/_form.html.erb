@@ -1,0 +1,13 @@
+<%= form_with model: [commentable, comment] do |f| %>
+  <div>
+    <%= f.label :content %>
+    <%= f.text_area :content, required: true %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
+<br>
+<div>
+<%= link_to t('comments.back', name: Comment.model_name.human), commentable %>
+</div>

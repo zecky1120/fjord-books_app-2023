@@ -1,0 +1,18 @@
+<div class="comments-container">
+  <h2><%= Comment.model_name.human %></h2>
+  <% if @comments.any? %>
+    <ul>
+      <% @comments.each do |comment| %>
+        <li>
+          <p><%= comment.content %></p>
+          <% if current_user.id == comment.user_id  %>
+            <p><%= link_to t('views.common.edit', name: Comment.model_name.human), edit_polymorphic_path([commentable, comment]) %> | </p>
+          <% end %>
+          <span><%= l comment.created_at %></span>
+        </li>
+    <% end %>
+    </ul>    
+    <% else %>
+      <p><%= t('comments.no_comments') %></p>
+  <% end %>
+</div>
