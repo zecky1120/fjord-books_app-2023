@@ -209,7 +209,7 @@ ja:
       notice_destroy: "%{name}が削除されました。"
   comments:
     no_comments: コメントはありません
-    back: "%{name}に戻る"
+    back: 戻る
   layouts:
     application:
       menu: メニュー
