@@ -27,6 +27,11 @@ class CommentsController < ApplicationController
       render :edit
     end
   end
+  
+  def destroy
+    @comment.destroy
+    redirect_to @commentable, notice: t('controllers.common.notice_destroy', name: Comment.model_name.human), status: :see_other
+  end
 
   private
 
