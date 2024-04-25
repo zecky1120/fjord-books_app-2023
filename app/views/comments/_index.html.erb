@@ -1,7 +1,8 @@
+<hr>
 <div class="comments-container">
   <h2><%= Comment.model_name.human %></h2>
   <% if @comments.any? %>
-    <ul>
+    <ul class="comments-index">
       <% @comments.each do |comment| %>
         <li>
           <p><%= comment.content %></p>

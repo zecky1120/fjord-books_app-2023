@@ -1,0 +1,29 @@
+/****************
+Comment
+****************/
+
+.comments-index {
+  list-style: none;
+  padding: 0;
+}
+
+.comments-index li {
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  padding: 1.25rem 1.5rem;
+}
+.comments-index li:not(:last-child) {
+  margin-bottom: 1rem;
+}
+.comments-index li p {
+  margin: 0;
+}
+
+.comments-index li small {
+  font-size: .75rem;
+  color: #888;
+  text-align: right;
+  display: block;
+  margin: .5rem 0;
+}
