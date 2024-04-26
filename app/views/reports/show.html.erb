@@ -25,3 +25,6 @@
   <%= button_to t('views.common.destroy', name: Report.model_name.human.downcase), @report, method: :delete %>
 </nav>
 <% end %>
+
+<%= render 'comments/index', commentable: @report, comments: @comments %>
+<%= render 'comments/form', commentable: @report, comment: @comment %>
