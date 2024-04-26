@@ -2,6 +2,10 @@
 
 <div class="show-item">
   <p>
+    <strong><%= Report.human_attribute_name(:user_name) %>:</strong>
+    <%= @report.user_name %>
+  </p>
+  <p>
     <strong><%= Report.human_attribute_name(:title) %>:</strong>
     <%= @report.title %>
   </p>
