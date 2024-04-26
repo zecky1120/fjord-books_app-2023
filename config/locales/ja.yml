@@ -210,6 +210,8 @@ ja:
   comments:
     no_comments: コメントはありません
     back: 戻る
+  reports:
+    no_reports: 日報はありません
   layouts:
     application:
       menu: メニュー

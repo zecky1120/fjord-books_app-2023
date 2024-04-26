@@ -1,11 +1,15 @@
 <h1><%= t('views.common.title_index', name: i18n_pluralize(Report.model_name.human)) %></h1>
 
 <div id="reports" class="index-items">
-  <% @reports.each do |report| %>
-    <div class="index-item">
-      <%= render report %>
-      <%= link_to t('views.common.show', name: Report.model_name.human.downcase), report %>
-    </div>
+  <% if @reports.any? %>
+    <% @reports.each do |report| %>
+      <div class="index-item">
+        <%= render report %>
+        <%= link_to t('views.common.show', name: Report.model_name.human.downcase), report %>
+      </div>
+    <% end %>
+  <% else %>
+    <p><%= t('reports.no_reports') %></p>
   <% end %>
 </div>
 
