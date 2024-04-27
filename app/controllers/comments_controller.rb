@@ -4,18 +4,17 @@ class CommentsController < ApplicationController
   before_action :set_comment, only: %i[edit update destroy]
 
   def create
-    @comment = @commentable.comments.build(comment_params)
-    @comment.user = current_user.name
-    if @comment.save
+    comment = @commentable.comments.build(comment_params)
+    comment.user = current_user
+    if comment.save
       redirect_to @commentable, notice: t('controllers.common.notice_create', name: Comment.model_name.human)
     else
-      @comments = @commentable.comments
+      comments = @commentable.comments
       render_commentable_show
     end
   end
 
   def edit
-    @book = Book.find(params[:book_id])
     @comment = Comment.find(params[:id])
   end
 

@@ -5,12 +5,14 @@
       <% @comments.each do |comment| %>
         <li>
           <p><%= comment.content %></p>
-          <small><%= l comment.created_at %></small>
-          <% if current_user.name == comment.user  %>
-            <nav class="comment-links"><%= link_to t('views.common.edit', name: Comment.model_name.human), edit_polymorphic_path([commentable, comment]) %> | <%= link_to t('views.common.destroy', name: Comment.model_name.human), polymorphic_path([commentable, comment]), data: { turbo_method: :delete, turbo_confirm: t('views.common.delete_confirm') } %></nav>
+          <small><%= comment.user.name_or_email %> | <%= l comment.created_at %></small>
+          <% if comment.user == current_user  %>
+            <nav class="comment-links">
+              <%= link_to t('views.common.edit', name: Comment.model_name.human), edit_polymorphic_path([commentable, comment]) %> | 
+              <%= link_to t('views.common.destroy', name: Comment.model_name.human), polymorphic_path([commentable, comment]), data: { turbo_method: :delete, turbo_confirm: t('views.common.delete_confirm') } %></nav>
           <% end %>
         </li>
-    <% end %>
+      <% end %>
     </ul>    
     <% else %>
       <p><%= t('comments.no_comments') %></p>
