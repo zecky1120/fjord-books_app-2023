@@ -4,12 +4,12 @@ class CommentsController < ApplicationController
   before_action :set_comment, only: %i[edit update destroy]
 
   def create
-    comment = @commentable.comments.build(comment_params)
-    comment.user = current_user
-    if comment.save
+    @comment = @commentable.comments.build(comment_params)
+    @comment.user = current_user
+    if @comment.save
       redirect_to @commentable, notice: t('controllers.common.notice_create', name: Comment.model_name.human)
     else
-      comments = @commentable.comments
+      @comment = @commentable.comments
       render_commentable_show
     end
   end
@@ -26,7 +26,7 @@ class CommentsController < ApplicationController
       render :edit
     end
   end
-  
+
   def destroy
     @comment.destroy
     redirect_to @commentable, notice: t('controllers.common.notice_destroy', name: Comment.model_name.human), status: :see_other
@@ -41,5 +41,4 @@ class CommentsController < ApplicationController
   def comment_params
     params.require(:comment).permit(:content)
   end
-
 end
