@@ -214,5 +214,7 @@ ja:
   # devise-i18n-viewsをオーバーライド
   devise:
     registrations:
+      profile_fields:
+        current_user_icon: 現在のユーザーアイコン
       edit:
         title: "アカウント編集"
