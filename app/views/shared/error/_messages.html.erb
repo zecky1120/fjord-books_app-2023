@@ -1,0 +1,10 @@
+<% if object.errors.any? %>
+  <div style="color: red">
+    <p><%= t('views.common.validation_error', errors: i18n_error_count(object.errors.count), name: object.model_name.human) %></p>
+    <ul>
+      <% object.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
