@@ -2,6 +2,7 @@
 
 class ReportsController < ApplicationController
   before_action :set_report, only: %i[edit show update destroy]
+  before_action :report_owner, only: %i[edit update destroy]
 
   def index
     @reports = Report.order(id: :desc).page(params[:page]).per(10)
@@ -51,5 +52,10 @@ class ReportsController < ApplicationController
 
   def report_params
     params.require(:report).permit(:title, :content)
+  end
+
+  def report_owner
+    owner = @report.user
+    redirect_to(reports_path) unless owner == current_user
   end
 end
