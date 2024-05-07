@@ -2,6 +2,7 @@
 
 class CommentsController < ApplicationController
   before_action :set_comment, only: %i[edit update destroy]
+  before_action :comment_owner, only: %i[edit update destroy]
 
   def create
     @comment = @commentable.comments.build(comment_params)
@@ -37,5 +38,10 @@ class CommentsController < ApplicationController
 
   def comment_params
     params.require(:comment).permit(:content)
+  end
+
+  def comment_owner
+    owner = @comment.user
+    redirect_to set_commentable unless owner == current_user
   end
 end
