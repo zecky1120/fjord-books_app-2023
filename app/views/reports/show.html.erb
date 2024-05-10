@@ -1,0 +1,35 @@
+<h1><%= t('views.common.title_show', name: Report.model_name.human) %></h1>
+
+<div class="show-item">
+  <p>
+    <strong><%= Report.human_attribute_name(:user_name) %>:</strong>
+    <%= @report.user.name_or_email %>
+  </p>
+
+  <p>
+    <strong><%= Report.human_attribute_name(:title) %>:</strong>
+    <%= @report.title %>
+  </p>
+
+  <p>
+    <strong><%= Report.human_attribute_name(:content) %>:</strong>
+    <%= @report.content %>
+  </p>
+
+  <p>
+    <strong><%= Report.human_attribute_name(:created_at) %>:</strong>
+    <%= l @report.created_at %>
+  </p>
+</div>
+
+<% if @report.user == current_user %>
+<nav class="page-nav">
+  <%= link_to t('views.common.edit', name: Report.model_name.human.downcase), edit_report_path(@report) %> |
+  <%= link_to t('views.common.back', name: i18n_pluralize(Report.model_name.human.downcase)), reports_path %>
+
+  <%= button_to t('views.common.destroy', name: Report.model_name.human.downcase), @report, method: :delete %>
+</nav>
+<% end %>
+
+<%= render 'comments/index', commentable: @report, comments: @comments %>
+<%= render 'comments/form', commentable: @report, comment: @comment %>

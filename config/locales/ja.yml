@@ -39,7 +39,7 @@ ja:
     - 金曜日
     - 土曜日
     formats:
-      default: "%Y/%m/%d"
+      default: "%Y/%m/%d %H:%M:%S"
       long: "%Y年%m月%d日(%a)"
       short: "%m/%d"
     month_names:
@@ -177,8 +177,8 @@ ja:
   time:
     am: 午前
     formats:
-      default: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
-      long: "%Y/%m/%d %H:%M"
+      default: "%Y/%m/%d %H:%M"
+      long: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
       short: "%m/%d %H:%M"
     pm: 午後
   views:
@@ -188,7 +188,7 @@ ja:
       destroy: "この%{name}を削除"
       new: "%{name}の新規作成"
       back: "%{name}の一覧に戻る"
-      delete_confirm: よろしいですか？
+      delete_confirm: "削除しますが、本当によろしいですか？"
       title_index: "%{name}の一覧"
       title_new: "%{name}の新規作成"
       title_edit: "%{name}の編集"
@@ -207,6 +207,11 @@ ja:
       notice_create: "%{name}が作成されました。"
       notice_update: "%{name}が更新されました。"
       notice_destroy: "%{name}が削除されました。"
+  comments:
+    no_comments: コメントはありません
+    back: 戻る
+  reports:
+    no_reports: 日報はありません
   layouts:
     application:
       menu: メニュー

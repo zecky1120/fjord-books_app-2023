@@ -1,0 +1,16 @@
+<%= form_with(model: report) do |f| %>
+  <%= render 'shared/error/messages', object: f.object %>
+  <div>
+    <%= f.label :title, style: "display: block" %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div>
+    <%= f.label :content, style: "display: block" %>
+    <%= f.text_area :content %>
+  </div>
+
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>

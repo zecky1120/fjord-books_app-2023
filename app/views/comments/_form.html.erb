@@ -1,0 +1,10 @@
+<%= form_with model: [commentable, comment] do |f| %>
+  <%= render 'shared/error/messages', object: f.object %>
+  <div>
+    <%= f.label :content %>
+    <%= f.text_area :content, required: true %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
