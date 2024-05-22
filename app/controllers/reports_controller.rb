@@ -9,6 +9,7 @@ class ReportsController < ApplicationController
 
   def show
     @report = Report.find(params[:id])
+    # @mentioned_reports = @report.mentioned_relations.order(id: :desc)
   end
 
   # GET /reports/new

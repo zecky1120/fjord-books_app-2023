@@ -4,6 +4,20 @@
   <%= render @report %>
 </div>
 
+<% if @report.mentioned_reports.exists? %>
+  <div class="mentioned_reports-container">
+    <p>この記事は以下の記事からリンクされています</p>
+    <ul>
+      <% @report.mentioned_reports.order(id: :desc).each do |report| %>
+        <li><%= link_to report[:title] %></li>
+      <% end %>
+    </ul>
+  </div>
+<% else %>
+no
+<% end %>
+
+
 <%= render 'shared/comments', commentable: @report %>
 
 <nav class="page-nav">
