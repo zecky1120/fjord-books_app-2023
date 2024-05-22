@@ -1,0 +1,20 @@
+.mentioned_reports-container {
+  background-color: #eee;
+  border-radius: .5rem;
+  padding: 1rem 2rem;
+  margin-top: 2rem;
+}
+.mentioned_reports-container .link {
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+}
+.mentioned_reports-container ul {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  padding-left: 0;
+}
+.mentioned_reports-container li {
+  list-style: none;
+}

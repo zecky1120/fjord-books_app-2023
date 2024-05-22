@@ -6,15 +6,13 @@
 
 <% if @report.mentioned_reports.exists? %>
   <div class="mentioned_reports-container">
-    <p>この記事は以下の記事からリンクされています</p>
+    <p class="link"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTYuOTQ5IDcuMDUxYy4zOS4zODkuMzkxIDEuMDIyLjAwMSAxLjQxM2wtOC40ODUgOC40ODZjLS4zOTIuMzkxLTEuMDIzLjM5MS0xLjQxNCAwLS4zOS0uMzktLjM5LTEuMDIxLjAwMS0xLjQxMmw4LjQ4NS04LjQ4OGMuMzktLjM5IDEuMDI0LS4zODcgMS40MTIuMDAxem0tNS44MDUgMTAuMDQzYy0uMTY0Ljc1NC0uNTQxIDEuNDg2LTEuMTQ2IDIuMDg4bC0xLjY2IDEuNjZjLTEuNTU1IDEuNTU5LTMuOTg2IDEuNjYzLTUuNDEzLjIzNS0xLjQyOS0xLjQyOC0xLjMyMy0zLjg1Ny4yMzQtNS40MTNsMS42NjEtMS42NjNjLjYwMy0uNjAxIDEuMzM0LS45OCAyLjA4Ny0xLjE0NGwxLjkzNC0xLjkzNGMtMS44MTctLjMwNi0zLjgyOS4yOTUtNS4zMTMgMS43ODNsLTEuNjYyIDEuNjYxYy0yLjM0MiAyLjM0LTIuNSA1Ljk3OC0uMzU0IDguMTIzIDIuMTQ1IDIuMTQ2IDUuNzgzIDEuOTg1IDguMTIzLS4zNTRsMS42Ni0xLjY2YzEuNDg2LTEuNDg3IDIuMDg5LTMuNDk2IDEuNzgzLTUuMzE0bC0xLjkzNCAxLjkzMnptMy4yMjItMTUuMjMxbC0xLjY2IDEuNjZjLTEuNDg2IDEuNDg4LTIuMDg5IDMuNDk5LTEuNzgzIDUuMzE3bDEuOTM1LTEuOTM1Yy4xNjItLjc1My41NC0xLjQ4NSAxLjE0Ni0yLjA4N2wxLjY2LTEuNjZjMS41NTYtMS41NTkgMy45ODQtMS42NjMgNS40MTMtLjIzNCAxLjQyOSAxLjQyNyAxLjMyNCAzLjg1Ny0uMjMzIDUuNDE1bC0xLjY2IDEuNjZjLS42MDIuNjAzLTEuMzM0Ljk4MS0yLjA4OSAxLjE0NWwtMS45MzQgMS45MzRjMS44MTguMzA2IDMuODI3LS4yOTUgNS4zMTctMS43ODNsMS42NTgtMS42NjJjMi4zNC0yLjMzOSAyLjQ5OC01Ljk3Ni4zNTQtOC4xMjEtMi4xNDUtMi4xNDYtNS43OC0xLjk4Ny04LjEyNC4zNTF6Ii8+PC9zdmc+">この記事は以下の記事からリンクされています</p>
     <ul>
       <% @report.mentioned_reports.order(id: :desc).each do |report| %>
-        <li><%= link_to report[:title] %></li>
+        <li><b><%= link_to report[:title], report %></b> からリンク</li>
       <% end %>
     </ul>
   </div>
-<% else %>
-no
 <% end %>
 
 
