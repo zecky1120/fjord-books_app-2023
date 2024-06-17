@@ -12,9 +12,20 @@
 .mentioned_reports-container ul {
   display: flex;
   flex-direction: column;
-  gap: .5rem;
-  padding-left: 0;
+  gap: 1rem;
+  list-style-type: disc;
+  padding-left: 1rem;
 }
 .mentioned_reports-container li {
-  list-style: none;
+  display: flex;
+  column-gap: .25rem;
+  row-gap: 1rem;
+  padding: 0 .5rem;
+}
+.mentioned_reports-container li p {
+  margin: 0;
+}
+.mentioned_reports-container li:not(:last-child) {
+  border-bottom: 1px dashed #333;
+  padding-bottom: 1rem;
 }

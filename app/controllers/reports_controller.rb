@@ -9,7 +9,7 @@ class ReportsController < ApplicationController
 
   def show
     @report = Report.find(params[:id])
-    @mentioned_reports = @report.mentioned_reports.order(id: :desc)
+    @mentions = @report.mentioned_relations.includes(mentioned_report: :user).order(created_at: :desc)
   end
 
   # GET /reports/new
@@ -23,7 +23,7 @@ class ReportsController < ApplicationController
     @report = current_user.reports.new(report_params)
 
     if @report.save
-      
+
       redirect_to @report, notice: t('controllers.common.notice_create', name: Report.model_name.human)
     else
       render :new, status: :unprocessable_entity
@@ -43,7 +43,7 @@ class ReportsController < ApplicationController
 
     redirect_to reports_url, notice: t('controllers.common.notice_destroy', name: Report.model_name.human)
   end
-
+  
   private
 
   def set_report
