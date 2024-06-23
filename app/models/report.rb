@@ -32,7 +32,7 @@ class Report < ApplicationRecord
   end
 
   def scan_report_ids
-    content.scan(%r{http://127.0.0.1:3000/reports/([+-]?\d+)}).flatten.map(&:to_i).uniq
+    content.scan(%r{http://127.0.0.1:3000/reports/(\d+)}).flatten.map(&:to_i).uniq
   end
 
   def generate_mentions(scan_report_ids)
