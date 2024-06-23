@@ -39,7 +39,7 @@ class Report < ApplicationRecord
     return if scan_report_ids.empty?
 
     scan_report_ids.each do |scan_report_id|
-      mentioning_relations.create(mentioning_report_id: report_id, mentioned_report_id: scan_report_id)
+      mentioning_relations.create(mentioned_report_id: scan_report_id)
     end
   end
 
@@ -47,12 +47,7 @@ class Report < ApplicationRecord
     return if remove_report_ids.empty?
 
     remove_report_ids.each do |remove_report_id|
-      mentioning_relations.find_by(mentioning_report_id: report_id, mentioned_report_id: remove_report_id).destroy
+      mentioning_relations.find_by(mentioned_report_id: remove_report_id).destroy
     end
-  end
-
-  def report_id
-    report = Report.find(id)
-    report.id
   end
 end
