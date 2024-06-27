@@ -3,6 +3,19 @@
 <div class="show-item">
   <%= render @report %>
 </div>
+<% if @mentions.exists? %>
+  <div class="mentioned_reports-container">
+    <p class="link"><%= t('views.common.mentions', name: Report.model_name.human.downcase) %></p>
+    <ul>
+      <% @mentions.each do |mention| %>
+        <li>
+          <p><%= link_to mention.mentioning_report.user.name_or_email, user_path(mention.mentioning_report.user_id) %> さんの記事：</p>
+          <b><%= link_to mention.mentioning_report.title, report_path(mention.mentioning_report.id) %></b> からリンク
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
 
 <%= render 'shared/comments', commentable: @report %>
 

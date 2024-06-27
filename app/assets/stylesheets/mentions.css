@@ -1,0 +1,31 @@
+.mentioned_reports-container {
+  background-color: #eee;
+  border-radius: .5rem;
+  padding: 1rem 2rem;
+  margin-top: 2rem;
+}
+.mentioned_reports-container .link {
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+}
+.mentioned_reports-container ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  list-style-type: disc;
+  padding-left: 1rem;
+}
+.mentioned_reports-container li {
+  display: flex;
+  column-gap: .25rem;
+  row-gap: 1rem;
+  padding: 0 .5rem;
+}
+.mentioned_reports-container li p {
+  margin: 0;
+}
+.mentioned_reports-container li:not(:last-child) {
+  border-bottom: 1px dashed #333;
+  padding-bottom: 1rem;
+}

@@ -6,7 +6,7 @@
 
   <p>
     <strong><%= Report.human_attribute_name(:content) %>:</strong>
-    <%= format_content report.content %>
+    <%= raw Rinku.auto_link(h(report.content)) %>
   </p>
 
   <p>

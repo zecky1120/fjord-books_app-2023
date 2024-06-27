@@ -9,6 +9,7 @@ class ReportsController < ApplicationController
 
   def show
     @report = Report.find(params[:id])
+    @mentions = @report.mentioned_relations.includes(mentioned_report: :user).order(created_at: :desc)
   end
 
   # GET /reports/new
