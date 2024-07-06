@@ -3,9 +3,14 @@
 alice:
   user: alice
   title: 初めての日報
-  content: みなさんよろしくお願いします。
+  content: アリスの記事です。初めてなので、よろしくお願いいたします！
 
 bob:
   user: bob
-  title: 初めまして
-  content: がんばります。
+  title: やっほー
+  content: がんばります！
+
+# carol:
+#   user: carol
+#   title: 言及テスト
+#   content: "言及テストのURLはhttp://127.0.0.1:3000/reports/"#{alice.id}" です！"
