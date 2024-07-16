@@ -12,10 +12,12 @@ class ReportsTest < ApplicationSystemTestCase
     click_on 'ログイン'
     assert_text 'ログインしました'
   end
+
   test '日報の一覧表示される' do
     visit reports_url
     assert_selector 'h1', text: '日報の一覧'
   end
+
   test '日報の新規作成できる' do
     visit reports_url
     click_on '日報の新規作成'
@@ -25,6 +27,7 @@ class ReportsTest < ApplicationSystemTestCase
     assert_text '日報が作成されました。'
     click_on '日報の一覧に戻る'
   end
+
   test '日報の編集ができる' do
     visit report_url(@report)
     click_on 'この日報を編集', match: :first
@@ -34,6 +37,7 @@ class ReportsTest < ApplicationSystemTestCase
     assert_text '日報が更新されました。'
     click_on '日報の一覧に戻る'
   end
+
   test '日報の削除ができる' do
     visit report_url(@report)
     click_on 'この日報を削除', match: :first
