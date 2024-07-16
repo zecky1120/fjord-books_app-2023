@@ -10,10 +10,12 @@ class ReportTest < ActiveSupport::TestCase
     assert alice_report.editable?(alice)
     assert_not alice_report.editable?(bob)
   end
+
   test 'created_on' do
     alice_report = reports(:alice)
     assert_equal alice_report.created_at.strftime('%Y/%m/%d'), I18n.l(alice_report.created_on)
   end
+
   test 'save_mentions' do
     alice_report = reports(:alice)
     bob = users(:bob)
