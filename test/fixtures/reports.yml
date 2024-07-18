@@ -10,7 +10,7 @@ bob:
   title: やっほー
   content: がんばります！
 
-# carol:
-#   user: carol
-#   title: 言及テスト
-#   content: "言及テストのURLはhttp://127.0.0.1:3000/reports/"#{alice.id}" です！"
+carol:
+  user: carol
+  title: こんにちは！
+  content: 私も頑張ります！
