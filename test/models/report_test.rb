@@ -23,8 +23,29 @@ class ReportTest < ActiveSupport::TestCase
     assert_includes(alice_report.mentioned_reports, bob_report)
     assert_not_includes(bob_report.mentioned_reports, alice_report)
     assert bob_report.mentioning_reports.find(alice_report.id)
-    update_content = '言及日報のURLを削除'
-    bob_report.update(title: '上書きしたよ', content: update_content)
+  end
+
+  test 'update_mentions' do
+    alice_report = reports(:alice)
+    carol_report = reports(:carol)
+    bob = users(:bob)
+    bob_report = bob.reports.create!(title: 'アリスの記事を言及している', content: "http://localhost:3000/reports/#{alice_report.id}")
+    assert_includes(alice_report.mentioned_reports, bob_report)
+    update_content = " 新たに日報を追加 http://localhost:3000/reports/#{carol_report.id}"
+    bob_report.update(title: '日報の追加', content: bob_report.content + update_content)
+    assert_includes(alice_report.mentioned_reports, bob_report)
+    assert_includes(carol_report.mentioned_reports, bob_report)
+    assert_not_includes(bob_report.mentioned_reports, alice_report)
+    assert_not_includes(bob_report.mentioned_reports, carol_report)
+  end
+
+  test 'destroy_mentions' do
+    alice_report = reports(:alice)
+    bob = users(:bob)
+    bob_report = bob.reports.create!(title: 'アリスの記事を言及している', content: "http://localhost:3000/reports/#{alice_report.id}")
+    assert_includes(alice_report.mentioned_reports, bob_report)
+    update_content = '言及先を削除したよ'
+    bob_report.update(title: 'URLの削除', content: update_content)
     assert_not_includes(bob_report.mentioned_reports, alice_report)
   end
 end
