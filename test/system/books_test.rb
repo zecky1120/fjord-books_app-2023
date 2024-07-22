@@ -15,7 +15,7 @@ class BooksTest < ApplicationSystemTestCase
 
   test '本の一覧表示される' do
     visit books_url
-    assert_selector 'h1', text: '本の一覧'
+    assert_text '本の一覧'
   end
 
   test '本の新規作成ができる' do

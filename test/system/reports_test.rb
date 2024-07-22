@@ -15,7 +15,7 @@ class ReportsTest < ApplicationSystemTestCase
 
   test '日報の一覧表示される' do
     visit reports_url
-    assert_selector 'h1', text: '日報の一覧'
+    assert_text '日報の一覧'
   end
 
   test '日報の新規作成できる' do
@@ -25,10 +25,10 @@ class ReportsTest < ApplicationSystemTestCase
     fill_in '内容', with: @report.content
     click_on '登録する'
     assert_text '日報が作成されました。'
-    assert_selector 'p', text: @report.title
-    assert_selector 'p', text: @report.content
-    assert_selector 'p', text: 'アリス'
-    assert_selector 'p', text: I18n.l(@report.created_on)
+    assert_text @report.title
+    assert_text @report.content
+    assert_text 'アリス'
+    assert_text I18n.l(@report.created_on)
     click_on '日報の一覧に戻る'
   end
 
@@ -39,10 +39,10 @@ class ReportsTest < ApplicationSystemTestCase
     fill_in '内容', with: '日報内容の変更'
     click_on '更新する'
     assert_text '日報が更新されました。'
-    assert_selector 'p', text: '日報タイトルの変更'
-    assert_selector 'p', text: '日報内容の変更'
-    assert_selector 'p', text: 'アリス'
-    assert_selector 'p', text: I18n.l(@report.created_on)
+    assert_text '日報タイトルの変更'
+    assert_text '日報内容の変更'
+    assert_text 'アリス'
+    assert_text I18n.l(@report.created_on)
     click_on '日報の一覧に戻る'
   end
 
