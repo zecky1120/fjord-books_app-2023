@@ -1,11 +1,16 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  user: one
-  title: MyString
-  content: MyText
+alice:
+  user: alice
+  title: 初めての日報
+  content: アリスの記事です。初めてなので、よろしくお願いいたします！
 
-two:
-  user: two
-  title: MyString
-  content: MyText
+bob:
+  user: bob
+  title: やっほー
+  content: がんばります！
+
+carol:
+  user: carol
+  title: こんにちは！
+  content: 私も頑張ります！
